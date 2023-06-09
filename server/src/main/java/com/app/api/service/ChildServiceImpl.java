@@ -1,13 +1,16 @@
 package com.app.api.service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.app.api.exceptions.CustomException;
 import com.app.api.model.ChildDTO;
 import com.app.api.repositories.ChildRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 
 @Service
 public class ChildServiceImpl implements ChildService {
@@ -18,9 +21,10 @@ public class ChildServiceImpl implements ChildService {
 	public List<ChildDTO> getChildrenByParentId(Long parentId) {
 		// Check if the parentId is null
 		if (parentId == null) {
-			throw new IllegalArgumentException("parentId cannot be null");
+			throw new CustomException(HttpStatus.BAD_REQUEST, "ParentId is invalid!");
 		}
 
+		// Format the list of children into a list of ChildDTOs
 		return childRepository.getChildrenByParentId(parentId)
 				.stream()
 				.map(child -> {

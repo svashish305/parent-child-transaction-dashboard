@@ -11,11 +11,13 @@ function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   themeSettings.palette.mode = prefersDarkMode ? 'dark' : 'light';
 
+  // Create a theme instance using settings data and material ui.
   const theme = useMemo(() => createTheme(themeSettings), [])
 
   return (
     <>
       <BrowserRouter>
+        {/* Set the theme */}
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
