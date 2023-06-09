@@ -10,8 +10,8 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar>
           <PeopleIcon sx={{ mr: 2 }} />
-          <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
-            Parent Child App
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+            Parent Child Transaction App
           </Typography>
         </Toolbar>
       </AppBar>
