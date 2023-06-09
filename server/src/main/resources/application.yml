@@ -1,4 +1,7 @@
 spring:
+  config:
+    name: classpath:application
+    location: file:./.env
   datasource:
     url: jdbc:postgresql://localhost:5432/mydb
     username: db_user
