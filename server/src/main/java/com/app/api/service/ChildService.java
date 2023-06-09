@@ -5,5 +5,5 @@ import java.util.List;
 import com.app.api.model.ChildDTO;
 
 public interface ChildService {
-    public List<ChildDTO> getChildrenByParentId(Long parentId);
+	public List<ChildDTO> getChildrenByParentId(Long parentId);
 }

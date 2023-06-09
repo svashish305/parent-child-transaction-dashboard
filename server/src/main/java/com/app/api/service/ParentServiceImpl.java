@@ -13,15 +13,15 @@ import com.app.api.repositories.ParentRepository;
 @Service
 public class ParentServiceImpl implements ParentService {
 
-    @Autowired
-    ParentRepository parentRepository;
+	@Autowired
+	ParentRepository parentRepository;
 
-    @Override
-    public Page<Parent> getPaginatedParents(int page, int size, String sortBy, int sortOrder) {
-        Direction sortingOrder = sortOrder == 1 ? Sort.Direction.ASC : Sort.Direction.DESC;
-        Sort sort = Sort.by(sortingOrder, sortBy);
-        PageRequest pageRequest = PageRequest.of(page, size, sort);
-        return parentRepository.findAll(pageRequest);
-    }
+	@Override
+	public Page<Parent> getPaginatedParents(int page, int size, String sortBy, int sortOrder) {
+		Direction sortingOrder = sortOrder == 1 ? Sort.Direction.ASC : Sort.Direction.DESC;
+		Sort sort = Sort.by(sortingOrder, sortBy);
+		PageRequest pageRequest = PageRequest.of(page, size, sort);
+		return parentRepository.findAll(pageRequest);
+	}
 
 }

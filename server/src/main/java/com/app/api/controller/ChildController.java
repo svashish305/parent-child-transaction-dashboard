@@ -14,12 +14,12 @@ import com.app.api.service.ChildService;
 @RestController
 public class ChildController {
 
-    @Autowired
-    ChildService childService;
+  @Autowired
+  ChildService childService;
 
-    @GetMapping(path = "/child")
-    public ResponseEntity<List<ChildDTO>> getChildrenByParentId(
-            @RequestParam(value = "parentId", defaultValue = "1") Long parentId) {
-        return ResponseEntity.ok(childService.getChildrenByParentId(parentId));
-    }
+  @GetMapping(path = "/child")
+  public ResponseEntity<List<ChildDTO>> getChildrenByParentId(
+      @RequestParam(value = "parentId", defaultValue = "1") Long parentId) {
+    return ResponseEntity.ok(childService.getChildrenByParentId(parentId));
+  }
 }

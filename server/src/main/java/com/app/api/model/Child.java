@@ -9,44 +9,44 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "child")
 public class Child implements Serializable {
 
-    public Child() {
-    }
+	public Child() {
+	}
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "parent_id")
-    private Parent parent;
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "parent_id")
+	private Parent parent;
 
-    @NotNull
-    @Column(name = "paid_amount")
-    private Long paidAmount;
+	@NotNull
+	@Column(name = "paid_amount")
+	private Long paidAmount;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+	// Getters and Setters
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Parent getParent() {
-        return parent;
-    }
+	public Parent getParent() {
+		return parent;
+	}
 
-    public void setParent(Parent parent) {
-        this.parent = parent;
-    }
+	public void setParent(Parent parent) {
+		this.parent = parent;
+	}
 
-    public Long getPaidAmount() {
-        return paidAmount;
-    }
+	public Long getPaidAmount() {
+		return paidAmount;
+	}
 
-    public void setPaidAmount(Long paidAmount) {
-        this.paidAmount = paidAmount;
-    }
+	public void setPaidAmount(Long paidAmount) {
+		this.paidAmount = paidAmount;
+	}
 }

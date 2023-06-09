@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  postgres:
+    env_file:
+      - .env
+    container_name: db
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-db_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-db_password}
+      POSTGRES_DB: ${POSTGRES_DB:-mydb}
+      PGDATA: /data/postgres/mydbtracker
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:

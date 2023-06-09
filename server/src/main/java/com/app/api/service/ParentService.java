@@ -6,5 +6,5 @@ import com.app.api.model.Parent;
 
 public interface ParentService {
 
-    public Page<Parent> getPaginatedParents(int page, int size, String sortBy, int sortOrder);
+	public Page<Parent> getPaginatedParents(int page, int size, String sortBy, int sortOrder);
 }

@@ -14,15 +14,15 @@ import org.springframework.http.ResponseEntity;
 @RestController
 public class ParentController {
 
-    @Autowired
-    ParentService parentService;
+	@Autowired
+	ParentService parentService;
 
-    @GetMapping(path = "/parent")
-    public ResponseEntity<Page<Parent>> getParents(
-            @RequestParam(value = "page", defaultValue = "0") int page,
-            @RequestParam(value = "size", defaultValue = "2") int size,
-            @RequestParam(value = "sortBy", defaultValue = "id") String sortBy,
-            @RequestParam(value = "sortOrder", defaultValue = "1") int sortOrder) {
-        return ResponseEntity.ok(parentService.getPaginatedParents(page, size, sortBy, sortOrder));
-    }
+	@GetMapping(path = "/parent")
+	public ResponseEntity<Page<Parent>> getParents(
+			@RequestParam(value = "page", defaultValue = "0") int page,
+			@RequestParam(value = "size", defaultValue = "2") int size,
+			@RequestParam(value = "sortBy", defaultValue = "id") String sortBy,
+			@RequestParam(value = "sortOrder", defaultValue = "1") int sortOrder) {
+		return ResponseEntity.ok(parentService.getPaginatedParents(page, size, sortBy, sortOrder));
+	}
 }
