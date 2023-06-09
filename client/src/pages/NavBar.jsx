@@ -1,16 +1,21 @@
-import { Link } from 'react-router-dom'
-import { Box, Typography } from '@mui/material'
-import FlexBetween from '../components/FlexBetween'
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import PeopleIcon from '@mui/icons-material/People';
+import { useTheme } from '@mui/material/styles';
 
 const NavBar = () => {
+  const { palette } = useTheme()
+
   return (
-    <>
-			<FlexBetween gap="0.75rem">
-        <Typography variant="h4" fontSize="16px">
-          ParentChildApp
-        </Typography>
-      </FlexBetween>
-    </>
+    <Box sx={{ flexGrow: 1, backgroundColor: palette.tertiary[500] }}>
+      <AppBar position="static">
+        <Toolbar>
+          <PeopleIcon sx={{ mr: 2 }} />
+          <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+            Parent Child App
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
   )
 }
 
