@@ -4,6 +4,10 @@ A simple app to show parent child tables in dashboard.
 Backend is written in Java 17 using Gradle as build tool and Springboot 3.1 as framework.
 Frontend is written in Javascript using Vite as build tool and React as framework, with Material UI library.
 
+## Demo Video Recording
+
+Watch the app in action [here](https://www.loom.com/share/e64a2351492e428ba54867dea2f043be)
+
 ## How to run
 
 ### Backend
@@ -20,6 +24,8 @@ sudo systemctl stop postgresql
 sudo docker compose up
 ```
 
+Once app is started, you can see the parents table first, clicking on the rightmost cell which is totalAmount should redirect to its children page, and click browser back button should go back.
+
 ### Frontend
 
 ```bash
@@ -27,4 +33,3 @@ cd client
 npm install
 npm run dev
 ```
-
