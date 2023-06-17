@@ -4,10 +4,6 @@ A simple app to show parent child tables in dashboard.
 Backend is written in Java 17 using Gradle as build tool and Springboot 3.1 as framework.
 Frontend is written in Javascript using Vite as build tool and React as framework, with Material UI library.
 
-## Demo Video Recording
-
-Watch the app in action [here](https://www.loom.com/share/e64a2351492e428ba54867dea2f043be)
-
 ## How to run
 
 ### Backend
